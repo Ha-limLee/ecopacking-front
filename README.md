@@ -2,6 +2,32 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How to start project
+You need [Node.js 16 LTS](https://nodejs.org) and Yarn package manager.\
+If you have node.js already, please install yarn.
+
+> npm install --global yarn
+
+Then clone or pull this repo.
+
+> git clone https://github.com/Ha-limLee/ecopacking-front\
+cd ecopacking-front
+
+or 
+
+> mkdir ecopacking-front\
+cd ecopacking-front\
+git init\
+git pull https://github.com/Ha-limLee/ecopacking-front
+
+Now install all dependencies.
+> yarn
+
+Let's launch this project.
+> yarn start
+
+Finally you'll see the browser open.
+
 ## Available Scripts
 
 In the project directory, you can run:
