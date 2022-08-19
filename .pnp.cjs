@@ -36,13 +36,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:13.3.0"],\
             ["@testing-library/user-event", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:13.5.0"],\
-            ["@types/bootstrap", "npm:5.2.2"],\
             ["@types/jest", "npm:27.5.2"],\
             ["@types/node", "npm:16.11.49"],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["autoprefixer", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:10.4.8"],\
+            ["nuka-carousel", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:5.2.0"],\
             ["postcss", "npm:8.4.16"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:18.2.0"],\
@@ -3770,15 +3770,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["@popperjs/core", [\
-        ["npm:2.11.6", {\
-          "packageLocation": "./.yarn/cache/@popperjs-core-npm-2.11.6-5bcdc104bd-47fb328cec.zip/node_modules/@popperjs/core/",\
-          "packageDependencies": [\
-            ["@popperjs/core", "npm:2.11.6"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["@rollup/plugin-babel", [\
         ["npm:5.3.1", {\
           "packageLocation": "./.yarn/cache/@rollup-plugin-babel-npm-5.3.1-6039a4d033-220d71e464.zip/node_modules/@rollup/plugin-babel/",\
@@ -4270,16 +4261,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/bonjour", "npm:3.5.10"],\
             ["@types/node", "npm:18.7.6"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@types/bootstrap", [\
-        ["npm:5.2.2", {\
-          "packageLocation": "./.yarn/cache/@types-bootstrap-npm-5.2.2-3745f70820-8d514dfade.zip/node_modules/@types/bootstrap/",\
-          "packageDependencies": [\
-            ["@types/bootstrap", "npm:5.2.2"],\
-            ["@popperjs/core", "npm:2.11.6"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7668,13 +7649,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:13.3.0"],\
             ["@testing-library/user-event", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:13.5.0"],\
-            ["@types/bootstrap", "npm:5.2.2"],\
             ["@types/jest", "npm:27.5.2"],\
             ["@types/node", "npm:16.11.49"],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["autoprefixer", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:10.4.8"],\
+            ["nuka-carousel", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:5.2.0"],\
             ["postcss", "npm:8.4.16"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:18.2.0"],\
@@ -11806,6 +11787,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["nth-check", "npm:2.1.1"],\
             ["boolbase", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["nuka-carousel", [\
+        ["npm:5.2.0", {\
+          "packageLocation": "./.yarn/cache/nuka-carousel-npm-5.2.0-743df0588e-083a4c8993.zip/node_modules/nuka-carousel/",\
+          "packageDependencies": [\
+            ["nuka-carousel", "npm:5.2.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:5.2.0", {\
+          "packageLocation": "./.yarn/__virtual__/nuka-carousel-virtual-63015b9e5f/0/cache/nuka-carousel-npm-5.2.0-743df0588e-083a4c8993.zip/node_modules/nuka-carousel/",\
+          "packageDependencies": [\
+            ["nuka-carousel", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:5.2.0"],\
+            ["@types/react", "npm:18.0.17"],\
+            ["@types/react-dom", "npm:18.0.6"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
