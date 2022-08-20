@@ -10,7 +10,7 @@ If you have node.js already, please install yarn.
 
 Then clone or pull this repo.
 
-> git clone https://github.com/Ha-limLee/ecopacking-front \
+> git clone https://github.com/Ha-limLee/ecopacking-front.git \
 cd ecopacking-front
 
 or 
@@ -18,7 +18,7 @@ or
 > mkdir ecopacking-front \
 cd ecopacking-front \
 git init \
-git pull https://github.com/Ha-limLee/ecopacking-front
+git pull https://github.com/Ha-limLee/ecopacking-front.git
 
 Now install all dependencies.
 > yarn
