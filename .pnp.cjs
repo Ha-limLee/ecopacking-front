@@ -45,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["autoprefixer", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:10.4.8"],\
+            ["http-proxy-middleware", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:2.0.6"],\
             ["nuka-carousel", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:5.2.0"],\
             ["postcss", "npm:8.4.16"],\
             ["react", "npm:18.2.0"],\
@@ -8151,6 +8152,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["autoprefixer", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:10.4.8"],\
+            ["http-proxy-middleware", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:2.0.6"],\
             ["nuka-carousel", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:5.2.0"],\
             ["postcss", "npm:8.4.16"],\
             ["react", "npm:18.2.0"],\
@@ -10032,6 +10034,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["http-proxy-middleware", "npm:2.0.6"]\
           ],\
           "linkType": "SOFT"\
+        }],\
+        ["virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:2.0.6", {\
+          "packageLocation": "./.yarn/__virtual__/http-proxy-middleware-virtual-9d6d8045ad/0/cache/http-proxy-middleware-npm-2.0.6-3bb17658ee-2ee85bc878.zip/node_modules/http-proxy-middleware/",\
+          "packageDependencies": [\
+            ["http-proxy-middleware", "virtual:153ab96966783e78a9aaf8400c019ef73fc48d49ccb74dd9501deab9cd382a5b59f733b7cf4a8570abcc4d7ddf6a50b57eeb078bdecb0beec1ce0f37a0ff084d#npm:2.0.6"],\
+            ["@types/express", null],\
+            ["@types/http-proxy", "npm:1.17.9"],\
+            ["http-proxy", "npm:1.18.1"],\
+            ["is-glob", "npm:4.0.3"],\
+            ["is-plain-obj", "npm:3.0.0"],\
+            ["micromatch", "npm:4.0.5"]\
+          ],\
+          "packagePeers": [\
+            "@types/express"\
+          ],\
+          "linkType": "HARD"\
         }],\
         ["virtual:b3b27e295bc4d8f04c24ce348356c3631bc0b80f0435f496b453e349ffd14187f351db7bf04f0cedd76b3296aecacc1e4437f7cf2b7ee82db296352339775cf0#npm:2.0.6", {\
           "packageLocation": "./.yarn/__virtual__/http-proxy-middleware-virtual-236be4f0ad/0/cache/http-proxy-middleware-npm-2.0.6-3bb17658ee-2ee85bc878.zip/node_modules/http-proxy-middleware/",\

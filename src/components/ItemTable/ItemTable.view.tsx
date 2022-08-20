@@ -1,7 +1,7 @@
-import TableItem from "types/TableItem";
+import PackingProduct from "types/PackingProduct";
 import ItemTableRowView from "./ItemTableRow.view";
 
-export default function ItemTableView({contents}: {contents: TableItem[]}) {
+export default function ItemTableView({contents}: {contents: PackingProduct[]}) {
     return (
         <div className="h-full overflow-auto">
 <table className="border-collapse w-full">
