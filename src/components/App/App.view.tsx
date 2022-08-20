@@ -2,12 +2,17 @@ import { ItemTable } from "components/ItemTable";
 import { Layout } from "components/Layout";
 import { FeedbackButton } from "components/FeedbackButton";
 import PackingBox from "types/PackingBox";
+import { OrderInput } from "components/OrderInput";
+import React from "react";
 
-export default function AppView({packingBox}: {packingBox: PackingBox}) {
+export default function AppView({packingBox, onSearch}: {packingBox: PackingBox, onSearch: (orderNumber: string) => void}) {
     return (
         <body>
-            <header className="p-5">
-                <OrderNumber></OrderNumber>
+            {/* header */}
+            <header className="bg-amber-400 p-5">
+                <h1 className="text-2xl md:text-4xl">
+                    <OrderInput onSearch={onSearch}/>
+                </h1>
             </header>
 
             <div className="bg-white my-5 w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
