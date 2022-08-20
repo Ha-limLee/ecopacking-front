@@ -1,8 +1,9 @@
 import { ItemTable } from "components/ItemTable";
 import { Layout } from "components/Layout";
 import { FeedbackButton } from "components/FeedbackButton";
+import PackingBox from "types/PackingBox";
 
-export default function AppView() {
+export default function AppView({packingBox}: {packingBox: PackingBox}) {
     return (
         <body>
             <header className="bg-amber-400 p-5">
@@ -11,7 +12,7 @@ export default function AppView() {
 
             <div className="bg-white my-5 w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                 <main className="bg-sky-300 md:w-2/3 lg:w-3/4 px-5 py-40">
-                    <ItemTable></ItemTable>
+                    <ItemTable items={packingBox.ppList}></ItemTable>
                 </main>
                 {/* side */}
                 <aside className="bg-green-300 md:w-1/3 lg:w-1/4 px-5 py-40">

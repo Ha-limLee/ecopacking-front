@@ -5552,6 +5552,7 @@ __metadata:
     "@types/react-dom": ^18.0.0
     "@types/testing-library__jest-dom": ^5
     autoprefixer: ^10.4.8
+    http-proxy-middleware: ^2.0.6
     nuka-carousel: ^5.2.0
     postcss: ^8.4.16
     react: ^18.2.0
@@ -7062,7 +7063,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"http-proxy-middleware@npm:^2.0.3":
+"http-proxy-middleware@npm:^2.0.3, http-proxy-middleware@npm:^2.0.6":
   version: 2.0.6
   resolution: "http-proxy-middleware@npm:2.0.6"
   dependencies:
