@@ -13,8 +13,7 @@ const customStyles = {
 };
 
 export default function FeedbackButtonView() {
-    return (
-      <>
-      </>
+    return (<>
+    </>
     );
 }
