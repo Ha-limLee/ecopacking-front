@@ -22,7 +22,7 @@ export default function AppView({packingBox, onSearch}: {packingBox: PackingBox,
                 {/* side */}
                 <aside className="h-96 md:w-1/3 lg:w-1/4 px-5 py-5">
                     <h1 className="text-2xl md:text-4xl">
-                        <FeedbackButton text="Feed-back" modalText="Hello World!"></FeedbackButton>
+                        <FeedbackButton text="Feed-back" materialCount={packingBox.ppList.length}></FeedbackButton>
                     </h1>
                 </aside>
             </div>
