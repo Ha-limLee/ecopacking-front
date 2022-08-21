@@ -8,7 +8,7 @@ import Recoil from 'recoil';
 
 export default function App() {
   const [data, setData] = React.useState<PackingBox[]>([{size: '0', ppList: []}]);
-  const [orderNumber, setOrderNumber] = React.useState('');
+  const [orderNumber, setOrderNumber] = React.useState('1');
 
   React.useEffect(() => {
     fetch('/eco/order/' + orderNumber)
