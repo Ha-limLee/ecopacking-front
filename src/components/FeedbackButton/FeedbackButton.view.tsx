@@ -4,7 +4,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { FeedbackRadio } from 'components/FeedbackRadio';
+import { BoxRadio, ProductRadio } from 'components/Radios';
+import PackingProduct from 'types/PackingProduct';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -18,19 +19,10 @@ const style = {
   p: 4,
 };
 
-function createRadio({text, groupName}: {text: string, groupName: string}) {
-  return (
-    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-      {text}
-      <FeedbackRadio groupName={groupName}></FeedbackRadio>
-    </Typography>
-  );
-}
-
 /**
  * materialCount := 포장재 수
  */
-export default function FeedbackButtonView({text, isOpen, materialCount, handleOpen, handleClose}: {text: string, isOpen: boolean, materialCount: number, handleOpen: () => void, handleClose: () => void}) {
+export default function FeedbackButtonView({text, isOpen, ppList, handleOpen, handleClose, handleSubmit}: {text: string, isOpen: boolean, ppList: PackingProduct[], handleOpen: () => void, handleClose: () => void, handleSubmit: React.FormEventHandler<HTMLFormElement>}) {
     return (
       <div>
       <button className='bg-teal-300 rounded-md p-2' onClick={handleOpen}>{text}</button>
@@ -45,9 +37,16 @@ export default function FeedbackButtonView({text, isOpen, materialCount, handleO
           <Typography id="modal-modal-title" variant="h6" component="h2">
             피드백
           </Typography>
-          <form method="put" >
-            {createRadio({text: "상자 크기 피드백", groupName: "box"})}
-            {Array.from(new Array(materialCount), (__, i) => i).map(i => createRadio({text: `${i + 1} 번 포장재 피드백`, groupName: `${i + 1}-material`}))}
+          <form method="post" onSubmit={handleSubmit}>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            {"상자 크기 피드백"}
+            <BoxRadio/>
+          </Typography>
+            {ppList.map((x, i) => ( <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                                      {`${i + 1} 번째 상품의 포장재 피드백`}
+                                      <ProductRadio id={x.id} groupName={`${i + 1}-material`}/>
+                                    </Typography> ))}
+            <button className="mt-2 border-2 rounded bg-pink-500" type='submit'>제출</button>
           </form>
         </Box>
       </Modal>  
