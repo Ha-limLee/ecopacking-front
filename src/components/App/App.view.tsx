@@ -15,6 +15,7 @@ export default function AppView({packingBox, onSearch}: {packingBox: PackingBox,
                 <h1 className="text-2xl md:text-4xl">
                     <OrderInput onSearch={onSearch}/>
                 </h1>
+                {/* 주문번호 입력 */}
                 <OrderNumber></OrderNumber>
             </header>
 
