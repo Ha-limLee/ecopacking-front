@@ -25,8 +25,21 @@ const style = {
 export default function FeedbackButtonView({text, isOpen, ppList, handleOpen, handleClose, handleSubmit}: {text: string, isOpen: boolean, ppList: PackingProduct[], handleOpen: () => void, handleClose: () => void, handleSubmit: React.FormEventHandler<HTMLFormElement>}) {
     return (
       <div>
-      <button className='bg-teal-300 rounded-md p-2' onClick={handleOpen}>{text}</button>
-      {/*<Button className='bg-gray-900' onClick={handleOpen}>{text}</Button>*/}
+      <div className="inline-block">
+      <button className="bg-gradient-to-t from-blue-700 to-blue-400 hover:from-blue-600 hover:to-blue-300
+       text-white font-bold w-full h-40 py-4 px-4 mb-5 rounded"
+       /*
+       Order.state = true
+        */
+        >
+        포장 완료
+      </button>
+      <button className="bg-gradient-to-t from-rose-800 to-rose-600 hover:from-rose-700 hover:to-rose-300
+       text-white font-bold w-full h-40 py-4 px-4 rounded" onClick={handleOpen}>
+        <p className="text-sm">포장 과정에 문제가 있나요?</p>
+        피드백 전송
+      </button>
+      </div>
       <Modal
         open={isOpen}
         onClose={handleClose}
