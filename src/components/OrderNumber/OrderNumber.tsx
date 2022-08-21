@@ -15,7 +15,9 @@ export default function OrderNumber() {
             <button className="h-fit bg-violet-800 hover:bg-violet-500 text-white font-bold py-2.5 px-4 mb-3 rounded">
                 조회
             </button>
-            <img src="/kurly.jpg" className="w-16 ml-auto mb-3"></img>
+            <div className="flex flex-nowrap items-center ml-auto">
+            <img src="/kurly.jpg" className="w-16 h-10 mb-3 mr-3"></img>
+            <img src="/logo.png" className="w-16 mb-3"></img></div>
         </div>
     );
 }
