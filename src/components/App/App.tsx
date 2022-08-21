@@ -4,6 +4,7 @@ import AppView from './App.view';
 import { PackingApp } from 'components/PackingApp';
 import Carousel from 'nuka-carousel';
 import PackingBox from 'types/PackingBox';
+import Recoil from 'recoil';
 
 export default function App() {
   const [data, setData] = React.useState<PackingBox[]>([{size: '0', ppList: []}]);
@@ -19,10 +20,12 @@ export default function App() {
   }, [orderNumber]);
 
   return (
-    <div id='App'>
-      <Carousel>
-        {data.map(x => <AppView packingBox={x} onSearch={setOrderNumber}/>)}
-      </Carousel>
-    </div>
+    <Recoil.RecoilRoot>
+      <div id='App'>
+        <Carousel>
+          {data.map(x => <AppView packingBox={x} onSearch={setOrderNumber}/>)}
+        </Carousel>
+      </div>
+    </Recoil.RecoilRoot>
   );
 }
