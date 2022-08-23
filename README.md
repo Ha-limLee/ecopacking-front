@@ -32,6 +32,13 @@ Finally you'll see the browser open.
 
 In the project directory, you can run:
 
+### `node start-with-server`
+
+Start the development mode with server url. \
+Default server is [http://localhost:5000](http://localhost:5000) \
+If you have other server, give the server url as argument. \
+e.g. node start-with-server http<area>://other-server.com
+
 ### `yarn start`
 
 Runs the app in the development mode. \
