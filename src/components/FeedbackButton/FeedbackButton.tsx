@@ -13,7 +13,6 @@ export default function FeedbackButton({text, ppList}: {text: string, ppList: Pa
   const [open, setOpen] = React.useState(false);
   const [boxState, setBoxState] = useRecoilState(BoxState);
   const [packingProductState, setPackingProductState] = useRecoilState(PackingProductState);
-  const obj = {};
   
   const handleOpen = () => {
     // init states
