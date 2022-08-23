@@ -1,7 +1,7 @@
 import ItemTableView from "./ItemTable.view"
-import PackingProduct from "types/PackingProduct";
+import ModProduct from "types/ModProduct";
 
-export default function ItemTable({items}: {items: PackingProduct[]}) {
+export default function ItemTable({items}: {items: ModProduct[]}) {
     return (
         <ItemTableView contents={items}/>
     );
