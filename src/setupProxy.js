@@ -3,7 +3,7 @@
  * target을 등록한 후 rest api로 통신한다.
  */
 const { createProxyMiddleware } = require('http-proxy-middleware');
-const url = 'http://3.37.47.51:8080'
+const url = 'http://3.37.47.51:8080/'
 
 module.exports = function(app) {
   app.use(
