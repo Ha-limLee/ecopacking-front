@@ -4,7 +4,6 @@
  */
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const url = 'http://3.37.47.51:8080'
-// const url = 'http://localhost:5000'
 
 module.exports = function(app) {
   app.use(
