@@ -26,8 +26,8 @@ export default function AppView({packingBox, onSearch}: {packingBox: PackingBox,
                 </aside>
             </div>
 
-            <footer className="bg-slate-800 mt-auto p-5">
-                <h1 className="text-2xl md:text-4xl text-white">Footer</h1>
+            <footer className="mt-auto p-5 border-t border-gray-300">
+                <p className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 return Kurly;. All Rights Reserved.</p>
             </footer>
         </body>
     );
