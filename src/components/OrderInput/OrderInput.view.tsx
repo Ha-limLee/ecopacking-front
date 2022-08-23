@@ -21,9 +21,9 @@ export default function ({handleChange, handleClick}: {handleChange: React.FormE
             <label className="block text-lg font-bold mr-6 mb-3" htmlFor="order-number">
                 주문 번호
             </label>
-            <input onChange={handleChange} className="appearance-none block w-auto mr-6 text-gray-700
-            border border-2 border-violet-800 rounded py-2 px-4 mb-3 focus:outline-none focus:bg-white"
-                id="order-number" type="text" placeholder="12345678" />
+            <input onChange={handleChange} className="appearance-none block w-auto mr-4 text-gray-700
+            border border-2 border-slate-200 rounded py-2 px-4 mb-3 focus:outline-none focus:bg-white focus:border-violet-500"
+                id="order-number" type="text" placehoder-slate-400 shadow-sm placeholder="12345678" />
             <button onClick={handleClick} className="h-fit bg-violet-800 hover:bg-violet-500 text-white font-bold py-2.5 px-4 mb-3 rounded">
                 조회
             </button>
