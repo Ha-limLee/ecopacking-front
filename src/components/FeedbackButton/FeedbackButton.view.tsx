@@ -42,7 +42,6 @@ export default function FeedbackButtonView({ text, isOpen, ppList, handleOpen, h
       </div>
       <Modal
         id="defaultModal"
-        aria-hidden="true" className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"
         open={isOpen}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
