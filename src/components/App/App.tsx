@@ -2,10 +2,11 @@ import React from 'react';
 import AppView from './App.view';
 import Carousel from 'nuka-carousel';
 import PackingBox from 'types/PackingBox';
-import Recoil from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { OrderInput } from 'components/OrderInput';
 import ModBox from 'types/ModBox';
 import ModProduct from 'types/ModProduct';
+import PageNumberState from 'states/PageNumberState';
 
 function convert(packingBoxList: PackingBox[]): ModBox[] {
   const modBoxList: ModBox[] = [];
@@ -38,27 +39,25 @@ function convert(packingBoxList: PackingBox[]): ModBox[] {
 
 export default function App() {
   const [data, setData] = React.useState<ModBox[]>([{size: '0', mpList: []}]);
-  const [orderNumber, setOrderNumber] = React.useState('');
+  const setPageNumber = React.useCallback(useSetRecoilState(PageNumberState), []);
 
-  React.useEffect(() => {
+  const onSearch = (orderNumber: string) => {
     fetch('/eco/order/' + orderNumber)
-      .then((val) => val.json())
-      .then(x => {
-        const modBoxList = convert(x.data as PackingBox[]);
-        setData(modBoxList);
-      });
-  }, [orderNumber]);
+        .then((val) => val.json())
+        .then(x => {
+            const modBoxList = convert(x.data as PackingBox[]);
+            setData(modBoxList);
+        });
+  }
 
   return (
-    <Recoil.RecoilRoot>
       <div id='App'>
         <header className="p-5">                
-            <OrderInput onSearch={setOrderNumber}/>
+            <OrderInput onSearch={onSearch}/>
         </header>
-        <Carousel>
+        <Carousel afterSlide={setPageNumber}>
           {data.map(x => <AppView modBox={x} />)}
         </Carousel>
       </div>
-    </Recoil.RecoilRoot>
   );
 }
