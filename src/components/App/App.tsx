@@ -38,7 +38,7 @@ function convert(packingBoxList: PackingBox[]): ModBox[] {
 
 export default function App() {
   const [data, setData] = React.useState<ModBox[]>([{size: '0', mpList: []}]);
-  const [orderNumber, setOrderNumber] = React.useState('1');
+  const [orderNumber, setOrderNumber] = React.useState('');
 
   React.useEffect(() => {
     fetch('/eco/order/' + orderNumber)
