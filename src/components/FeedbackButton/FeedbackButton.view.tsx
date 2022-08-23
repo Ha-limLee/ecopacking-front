@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { BoxRadio, ProductRadio } from 'components/Radios';
