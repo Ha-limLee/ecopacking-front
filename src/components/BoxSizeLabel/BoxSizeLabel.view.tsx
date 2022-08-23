@@ -1,6 +1,6 @@
 export default function({boxSize}: {boxSize: string}) {
     return (
-        <div>
+        <div className="font-bold">
             {`박스 크기 ${boxSize}`}
         </div>
     );
