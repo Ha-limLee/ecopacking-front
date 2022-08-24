@@ -56,7 +56,7 @@ export default function App() {
             <OrderInput onSearch={onSearch}/>
         </header>
         <Carousel afterSlide={setPageNumber}>
-          {data.map(x => <AppView modBox={x} />)}
+          {data.map((x, i) => <AppView key={i} modBox={x} />)}
         </Carousel>
       </div>
   );
