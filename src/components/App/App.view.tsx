@@ -5,7 +5,7 @@ import ModBox from "types/ModBox";
 
 export default function AppView({modBox}: {modBox: ModBox}) {
     return (
-        <body>
+        <>
             <div className="bg-white my-5 w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                 <main className="bg-sky-300 md:w-2/3 lg:w-3/4 px-5 py-40">
                     <BoxSizeLabel boxSize={modBox.size}/>
@@ -22,6 +22,6 @@ export default function AppView({modBox}: {modBox: ModBox}) {
             <footer className="mt-auto p-5 border-t border-gray-300">
                 <p className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 return Kurly;. All Rights Reserved.</p>
             </footer>
-        </body>
+        </>
     );
 }
