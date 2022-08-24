@@ -3,7 +3,6 @@
  * target을 등록한 후 rest api로 통신한다.
  */
 const { createProxyMiddleware } = require('http-proxy-middleware');
-
 const url = 'http://localhost:5000'
 
 module.exports = function(app) {
