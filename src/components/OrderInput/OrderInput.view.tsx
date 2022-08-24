@@ -1,18 +1,6 @@
-/*
 import React from "react";
 
-export default function OrderInputView({handleChange, handleClick}: {handleChange: React.FormEventHandler<HTMLInputElement>, handleClick: React.MouseEventHandler}) {
-    return (
-        <>
-        주문번호 <input onChange={handleChange}></input> <button onClick={handleClick}>조회</button>
-        </>
-    );
-} 
-*/  
-
-import React from "react";
-
-export default function ({inputRef, handleClick}: {inputRef: React.Ref<HTMLInputElement>, handleClick: React.MouseEventHandler}) {
+function OrderInputView({inputRef, handleClick}: {inputRef: React.Ref<HTMLInputElement>, handleClick: React.MouseEventHandler}) {
     return (
         <div className="w-full px-3 mb-6 md:mb-0
          flex flex-no-wrap items-center
@@ -35,3 +23,5 @@ export default function ({inputRef, handleClick}: {inputRef: React.Ref<HTMLInput
         </div>
     );
 }
+
+export default React.memo(OrderInputView);

@@ -1,4 +1,6 @@
-export default function ({ boxSize }: { boxSize: string }) {
+import React from 'react';
+
+function BoxSizeLabelView({ boxSize }: { boxSize: string }) {
     return (
         <div>
             <div className="flex flex-nowrap items-center p-4 mb-4 font-bold text-large
@@ -11,3 +13,5 @@ export default function ({ boxSize }: { boxSize: string }) {
         </div>
     );
 }
+
+export default React.memo(BoxSizeLabelView);

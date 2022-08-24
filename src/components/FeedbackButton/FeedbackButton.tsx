@@ -5,7 +5,8 @@ import BoxState from 'states/BoxState';
 import PackingProductState from 'states/PackingProductState';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { Product } from 'states/PackingProductState';
-import PageNumberState from 'states/PageNumberState';
+import TotalPageNumberState from 'states/TotalPageNumberState';
+import CurrentPageNumberState from 'states/CurrentPageNumberState';
 import OrderNumberState from 'states/OrderNumberState';
 
 function FeedbackButton({ppList}: {ppList: PackingProduct[]}) {
@@ -13,10 +14,11 @@ function FeedbackButton({ppList}: {ppList: PackingProduct[]}) {
   const [boxState, setBoxState] = useRecoilState(BoxState);
   const [packingProductState, setPackingProductState] = useRecoilState(PackingProductState);
 
-  const pageNumber = useRecoilValue(PageNumberState);
+  const totalPageNumber = useRecoilValue(TotalPageNumberState);
+  const currentPageNumber = useRecoilValue(CurrentPageNumberState);
   const orderNumber = useRecoilValue(OrderNumberState);
-  const totalNumber = ppList.length;
-  const end = (pageNumber === totalNumber - 1) ? true : false;
+
+  const end = (currentPageNumber === totalPageNumber - 1) ? true : false;
 
   const handleOpen = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -47,21 +49,22 @@ function FeedbackButton({ppList}: {ppList: PackingProduct[]}) {
         "boxFeedback": boxState,
         "materials": mats
       })
-    });
+    }).then(res => res.json())
+    .then(console.log); 
   };
 
   function handleEndClick(e: React.MouseEvent) {
     e.preventDefault();
-    fetch('/eco/order', {
+    fetch(`/eco/order/`, {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         "orderId" : orderNumber
       })
-    });
+    }).then(res => res.json())
+    .then(console.log);
   }
 
   return (

@@ -1,8 +1,11 @@
 import ItemTableView from "./ItemTable.view"
 import ModProduct from "types/ModProduct";
+import React from 'react';
 
-export default function ItemTable({items}: {items: ModProduct[]}) {
+function ItemTable({items}: {items: ModProduct[]}) {
     return (
         <ItemTableView contents={items}/>
     );
 }
+
+export default React.memo(ItemTable);

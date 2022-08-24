@@ -1,7 +1,10 @@
 import BoxSizeLabelView from "./BoxSizeLabel.view";
+import React from 'react';
 
-export default function({boxSize}: {boxSize: string}) {
+function BoxSizeLabel({boxSize}: {boxSize: string}) {
     return (
         <BoxSizeLabelView boxSize={boxSize}/>
     );
 }
+
+export default React.memo(BoxSizeLabel);

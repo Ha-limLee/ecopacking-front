@@ -17,17 +17,13 @@ const style = {
   p: 4,
 };
 
-/**
- * materialCount := 포장재 수
- */
 function FeedbackButtonView({ isOpen, isEnd, ppList, onEndClick, onOpen, onClose, onSubmit }: { isOpen: boolean, isEnd: boolean, ppList: PackingProduct[], onEndClick: React.MouseEventHandler, onOpen: React.MouseEventHandler, onClose: () => void, onSubmit: React.FormEventHandler<HTMLFormElement> }) {
   const endButtonStyle = isEnd ? '' : 'opacity-25';
   return (
     <div>
       <div className="inline-block">
         <button className={`bg-gradient-to-t from-blue-700 to-blue-400 hover:from-blue-600 hover:to-blue-300
-       text-white font-bold w-full h-40 py-4 px-4 mb-5 rounded ${endButtonStyle}`} onClick={onEndClick}
-        >
+          text-white font-bold w-full h-40 py-4 px-4 mb-5 rounded ${endButtonStyle}`} onClick={isEnd ? onEndClick : e => {}} >
           포장 완료
         </button>
         <button className="bg-gradient-to-t from-rose-800 to-rose-600 hover:from-rose-700 hover:to-rose-300
@@ -60,13 +56,17 @@ function FeedbackButtonView({ isOpen, isEnd, ppList, onEndClick, onOpen, onClose
             <div className="pt-3 pb-6 space-y-6">
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 {"상자 크기 피드백"}
-                <BoxRadio />
               </Typography>
+              <BoxRadio />
             </div>
-            {ppList.map((x, i) => (<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {`${i + 1} 번째 상품의 포장재 피드백`}
-              <ProductRadio id={x.id} groupName={`${i + 1}-material`} />
-            </Typography>))}
+            {ppList.map((x, i) => (
+              <div key={i}>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  {`${i + 1} 번째 상품의 포장재 피드백`}
+                </Typography>
+                <ProductRadio id={x.id} groupName={`${i + 1}-material`} />
+              </div>
+            ))}
             {/* <button className="mt-2 border-2 rounded bg-pink-500" type='submit'>제출</button> */}
             <div className="flex items-center justify-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
               <button data-modal-toggle="defaultModal" type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">제출</button>
