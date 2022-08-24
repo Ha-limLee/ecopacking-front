@@ -2,7 +2,7 @@ import React from 'react';
 import AppView from './App.view';
 import Carousel from 'nuka-carousel';
 import PackingBox from 'types/PackingBox';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import { OrderInput } from 'components/OrderInput';
 import ModBox from 'types/ModBox';
 import ModProduct from 'types/ModProduct';
@@ -44,8 +44,9 @@ function convert(packingBoxList: PackingBox[]): ModBox[] {
 function App() {
   const [data, setData] = React.useState<ModBox[]>([{size: '', texture: '', mpList: []}]);
   const setTotalPageNumber = useSetRecoilState(TotalPageNumberState);
-  const setCurrentPageNumber = useSetRecoilState(CurrentPageNumberState);
+  const [currentPageNumber, setCurrentPageNumber] = useRecoilState(CurrentPageNumberState);
   const setOrderNumber = useSetRecoilState(OrderNumberState);
+  const [slideIndex, setSlideIndex] = React.useState(0);
 
   const onSearch = (orderNumber: string) => {
     fetch('/eco/order/' + orderNumber)
@@ -55,6 +56,11 @@ function App() {
             setData(modBoxList);
             setTotalPageNumber(modBoxList.length);
             setOrderNumber(orderNumber);
+
+            // make Carousel move to index 0
+            // when search button clicked.
+            setSlideIndex(1);
+            setTimeout(() => setSlideIndex(0));
         });
   }
 
@@ -63,7 +69,7 @@ function App() {
         <header className="p-5">                
             <OrderInput onSearch={onSearch}/>
         </header>
-        <Carousel afterSlide={setCurrentPageNumber}>
+        <Carousel afterSlide={setCurrentPageNumber} slideIndex={slideIndex}>
           {data.map((x, i) => <AppView key={i} modBox={x} />)}
         </Carousel>
       </div>
