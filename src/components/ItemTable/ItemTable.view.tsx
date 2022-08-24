@@ -14,7 +14,7 @@ export default function ItemTableView({contents}: {contents: ModProduct[]}) {
         </tr>
     </thead>
     <tbody>
-        {contents.map(content => <ItemTableRowView tableItem={content}></ItemTableRowView>)}
+        {contents.map((content, i) => <ItemTableRowView key={i} tableItem={content}></ItemTableRowView>)}
     </tbody>
 </table>
 </div>

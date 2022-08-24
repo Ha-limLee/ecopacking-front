@@ -1,5 +1,3 @@
-import PackingProduct from "./PackingProduct";
-
 type ModProduct = {
     id: string;
     name: string;

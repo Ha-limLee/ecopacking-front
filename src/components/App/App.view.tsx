@@ -14,7 +14,7 @@ export default function AppView({modBox}: {modBox: ModBox}) {
                 {/* side */}
                 <aside className="flex justify-center self-center h-96 md:w-1/3 lg:w-1/4 px-5 py-5">
                     <h1 className="text-2xl md:text-4xl">
-                        <FeedbackButton text="Feed-back" ppList={modBox.mpList}></FeedbackButton>
+                        <FeedbackButton ppList={modBox.mpList}></FeedbackButton>
                     </h1>
                 </aside>
             </div>
