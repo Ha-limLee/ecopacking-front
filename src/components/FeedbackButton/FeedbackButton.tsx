@@ -12,7 +12,7 @@ function FeedbackButton({ppList}: {ppList: PackingProduct[]}) {
   const [open, setOpen] = React.useState(false);
   const [boxState, setBoxState] = useRecoilState(BoxState);
   const [packingProductState, setPackingProductState] = useRecoilState(PackingProductState);
-  
+
   const pageNumber = useRecoilValue(PageNumberState);
   const orderNumber = useRecoilValue(OrderNumberState);
   const totalNumber = ppList.length;
@@ -65,7 +65,7 @@ function FeedbackButton({ppList}: {ppList: PackingProduct[]}) {
   }
 
   return (
-    <FeedbackButtonView isOpen={open} isEnd={end} ppList={ppList} handleEndClick={handleEndClick} handleOpen={handleOpen} handleClose={handleClose} handleSubmit={handleSubmit}/>
+    <FeedbackButtonView isOpen={open} isEnd={end} ppList={ppList} onEndClick={handleEndClick} onOpen={handleOpen} onClose={handleClose} onSubmit={handleSubmit}/>
   );
 }
 
