@@ -4,6 +4,7 @@ import React from "react";
  * groupName := 박스 또는 물품 id \
  * handleChange := 라디오 버튼을 선택할 때 작동하는 콜백
  */
+
 function BoxRadioView({groupName, handleChange}: {groupName: string, handleChange: React.FormEventHandler}) {
     return (
         <div className="flex">

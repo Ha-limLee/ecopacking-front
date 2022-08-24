@@ -13,3 +13,4 @@ function OrderInput({onSearch}: {onSearch: (orderNumber: string) => void}) {
 }
 
 export default React.memo(OrderInput);
+

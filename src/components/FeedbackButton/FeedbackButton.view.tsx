@@ -19,7 +19,6 @@ const style = {
 
 function FeedbackButtonView({ isOpen, isEnd, ppList, onEndClick, onOpen, onClose, onSubmit }: { isOpen: boolean, isEnd: boolean, ppList: PackingProduct[], onEndClick: React.MouseEventHandler, onOpen: React.MouseEventHandler, onClose: () => void, onSubmit: React.FormEventHandler<HTMLFormElement> }) {
   const endButtonStyle = isEnd ? '' : 'opacity-25';
-  
   return (
     <div>
       <div className="inline-block">

@@ -50,7 +50,7 @@ function FeedbackButton({ppList}: {ppList: PackingProduct[]}) {
         "materials": mats
       })
     }).then(res => res.json())
-    .then(console.log);
+    .then(console.log); 
   };
 
   function handleEndClick(e: React.MouseEvent) {
