@@ -22,8 +22,8 @@ export default function ({inputRef, handleClick}: {inputRef: React.Ref<HTMLInput
                 주문 번호
             </label>
             <input ref={inputRef} className="appearance-none block w-auto mr-4 text-gray-700
-            border border-2 border-slate-200 rounded py-2 px-4 mb-3 focus:outline-none focus:bg-white focus:border-violet-500"
-                id="order-number" type="text" placehoder-slate-400 shadow-sm placeholder="12345678" />
+            border border-2 border-slate-200 rounded py-2 px-4 mb-3 focus:outline-none focus:bg-white focus:border-violet-500 placehoder-slate-400 shadow-sm"
+                id="order-number" type="text" placeholder="12345678" />
             <button onClick={handleClick} className="h-fit bg-violet-800 hover:bg-violet-500 text-white font-bold py-2.5 px-4 mb-3 rounded">
                 조회
             </button>
