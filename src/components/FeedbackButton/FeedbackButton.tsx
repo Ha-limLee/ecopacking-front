@@ -3,19 +3,23 @@ import FeedbackButtonView from './FeedbackButton.view';
 import PackingProduct from 'types/PackingProduct';
 import BoxState from 'states/BoxState';
 import PackingProductState from 'states/PackingProductState';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { Product } from 'states/PackingProductState';
+import PageNumberState from 'states/PageNumberState';
+import OrderNumberState from 'states/OrderNumberState';
 
-/**
- * materialCount := 포장재를 사용하는 물품 개수
- */
-export default function FeedbackButton({text, ppList}: {text: string, ppList: PackingProduct[]}) {
+function FeedbackButton({ppList}: {ppList: PackingProduct[]}) {
   const [open, setOpen] = React.useState(false);
   const [boxState, setBoxState] = useRecoilState(BoxState);
   const [packingProductState, setPackingProductState] = useRecoilState(PackingProductState);
-  const obj = {};
   
-  const handleOpen = () => {
+  const pageNumber = useRecoilValue(PageNumberState);
+  const orderNumber = useRecoilValue(OrderNumberState);
+  const totalNumber = ppList.length;
+  const end = (pageNumber === totalNumber - 1) ? true : false;
+
+  const handleOpen = (e: React.MouseEvent) => {
+    e.preventDefault();
     // init states
     setBoxState("0");
     setPackingProductState(ppList.map(val => val.id)
@@ -46,7 +50,23 @@ export default function FeedbackButton({text, ppList}: {text: string, ppList: Pa
     });
   };
 
+  function handleEndClick(e: React.MouseEvent) {
+    e.preventDefault();
+    fetch('/eco/order', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "orderId" : orderNumber
+      })
+    });
+  }
+
   return (
-    <FeedbackButtonView text={text} isOpen={open} ppList={ppList} handleOpen={handleOpen} handleClose={handleClose} handleSubmit={handleSubmit}/>
+    <FeedbackButtonView isOpen={open} isEnd={end} ppList={ppList} handleEndClick={handleEndClick} handleOpen={handleOpen} handleClose={handleClose} handleSubmit={handleSubmit}/>
   );
 }
+
+export default React.memo(FeedbackButton);

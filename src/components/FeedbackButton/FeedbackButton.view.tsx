@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { BoxRadio, ProductRadio } from 'components/Radios';
@@ -22,15 +20,13 @@ const style = {
 /**
  * materialCount := 포장재 수
  */
-export default function FeedbackButtonView({ text, isOpen, ppList, handleOpen, handleClose, handleSubmit }: { text: string, isOpen: boolean, ppList: PackingProduct[], handleOpen: () => void, handleClose: () => void, handleSubmit: React.FormEventHandler<HTMLFormElement> }) {
+function FeedbackButtonView({ isOpen, isEnd, ppList, handleEndClick, handleOpen, handleClose, handleSubmit }: { isOpen: boolean, isEnd: boolean, ppList: PackingProduct[], handleEndClick: React.MouseEventHandler, handleOpen: React.MouseEventHandler, handleClose: () => void, handleSubmit: React.FormEventHandler<HTMLFormElement> }) {
+  const endButtonStyle = isEnd ? '' : 'opacity-25';
   return (
     <div>
       <div className="inline-block">
-        <button className="bg-gradient-to-t from-blue-700 to-blue-400 hover:from-blue-600 hover:to-blue-300
-       text-white font-bold w-full h-40 py-4 px-4 mb-5 rounded"
-        /*
-        Order.state = true
-         */
+        <button className={`bg-gradient-to-t from-blue-700 to-blue-400 hover:from-blue-600 hover:to-blue-300
+       text-white font-bold w-full h-40 py-4 px-4 mb-5 rounded ${endButtonStyle}`} onClick={handleEndClick}
         >
           포장 완료
         </button>
@@ -79,9 +75,8 @@ export default function FeedbackButtonView({ text, isOpen, ppList, handleOpen, h
           </form>
         </Box>
       </Modal>
-
     </div>
-
-    
   );
 }
+
+export default React.memo(FeedbackButtonView);
