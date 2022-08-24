@@ -35,13 +35,14 @@ function convert(packingBoxList: PackingBox[]): ModBox[] {
     for (const key in dict) {
       mpList.push(dict[key]);
     }
-    modBoxList.push({size: packingBoxList[i].size, mpList: mpList});
+    const {size, texture} = packingBoxList[i];
+    modBoxList.push({size: size, texture: texture, mpList: mpList});
   }
   return modBoxList;
 }
 
 function App() {
-  const [data, setData] = React.useState<ModBox[]>([{size: '0', mpList: []}]);
+  const [data, setData] = React.useState<ModBox[]>([{size: '0', texture: '', mpList: []}]);
   const setTotalPageNumber = useSetRecoilState(TotalPageNumberState);
   const setCurrentPageNumber = useSetRecoilState(CurrentPageNumberState);
   const setOrderNumber = useSetRecoilState(OrderNumberState);
