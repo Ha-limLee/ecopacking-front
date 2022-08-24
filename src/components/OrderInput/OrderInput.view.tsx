@@ -12,7 +12,7 @@ export default function OrderInputView({handleChange, handleClick}: {handleChang
 
 import React from "react";
 
-export default function ({inputRef, handleClick}: {inputRef: React.Ref<HTMLInputElement>, handleClick: React.MouseEventHandler}) {
+function OrderInputView({inputRef, handleClick}: {inputRef: React.Ref<HTMLInputElement>, handleClick: React.MouseEventHandler}) {
     return (
         <div className="w-full px-3 mb-6 md:mb-0
          flex flex-no-wrap items-center
@@ -35,3 +35,5 @@ export default function ({inputRef, handleClick}: {inputRef: React.Ref<HTMLInput
         </div>
     );
 }
+
+export default React.memo(OrderInputView);

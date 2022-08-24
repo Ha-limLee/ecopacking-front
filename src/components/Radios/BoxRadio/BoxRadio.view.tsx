@@ -4,7 +4,7 @@ import React from "react";
  * groupName := 박스 또는 물품 id \
  * handleChange := 라디오 버튼을 선택할 때 작동하는 콜백
  */
-export default function({groupName, handleChange}: {groupName: string, handleChange: React.FormEventHandler}) {
+function BoxRadioView({groupName, handleChange}: {groupName: string, handleChange: React.FormEventHandler}) {
     return (
         <div className="flex">
             <div className="flex items-center mr-4">
@@ -30,3 +30,5 @@ export default function({groupName, handleChange}: {groupName: string, handleCha
         </div>
     );
 }
+
+export default React.memo(BoxRadioView);

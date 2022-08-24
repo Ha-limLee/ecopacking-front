@@ -2,8 +2,9 @@ import { ItemTable } from "components/ItemTable";
 import { FeedbackButton } from "components/FeedbackButton";
 import { BoxSizeLabel } from "components/BoxSizeLabel";
 import ModBox from "types/ModBox";
+import React from 'react';
 
-export default function AppView({modBox}: {modBox: ModBox}) {
+function AppView({modBox}: {modBox: ModBox}) {
     return (
         <>
             <div className="bg-white my-5 w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
@@ -25,3 +26,5 @@ export default function AppView({modBox}: {modBox: ModBox}) {
         </>
     );
 }
+
+export default React.memo(AppView);

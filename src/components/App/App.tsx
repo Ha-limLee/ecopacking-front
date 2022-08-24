@@ -6,7 +6,9 @@ import { useSetRecoilState } from 'recoil';
 import { OrderInput } from 'components/OrderInput';
 import ModBox from 'types/ModBox';
 import ModProduct from 'types/ModProduct';
-import PageNumberState from 'states/PageNumberState';
+import TotalPageNumberState from 'states/TotalPageNumberState';
+import CurrentPageNumberState from 'states/CurrentPageNumberState';
+import OrderNumberState from 'states/OrderNumberState';
 
 function convert(packingBoxList: PackingBox[]): ModBox[] {
   const modBoxList: ModBox[] = [];
@@ -20,6 +22,7 @@ function convert(packingBoxList: PackingBox[]): ModBox[] {
         let value = x.length;
         let unit = '';
         if (x.material === '종이포장') {
+          value = parseFloat(value).toFixed(2);
           unit = 'cm';
         } else if (x.material === '아이스팩') {
           value = value.split('.')[0];
@@ -37,9 +40,11 @@ function convert(packingBoxList: PackingBox[]): ModBox[] {
   return modBoxList;
 }
 
-export default function App() {
+function App() {
   const [data, setData] = React.useState<ModBox[]>([{size: '0', mpList: []}]);
-  const setPageNumber = React.useCallback(useSetRecoilState(PageNumberState), []);
+  const setTotalPageNumber = useSetRecoilState(TotalPageNumberState);
+  const setCurrentPageNumber = useSetRecoilState(CurrentPageNumberState);
+  const setOrderNumber = useSetRecoilState(OrderNumberState);
 
   const onSearch = (orderNumber: string) => {
     fetch('/eco/order/' + orderNumber)
@@ -47,6 +52,8 @@ export default function App() {
         .then(x => {
             const modBoxList = convert(x.data as PackingBox[]);
             setData(modBoxList);
+            setTotalPageNumber(modBoxList.length);
+            setOrderNumber(orderNumber);
         });
   }
 
@@ -55,9 +62,11 @@ export default function App() {
         <header className="p-5">                
             <OrderInput onSearch={onSearch}/>
         </header>
-        <Carousel afterSlide={setPageNumber}>
+        <Carousel afterSlide={setCurrentPageNumber}>
           {data.map((x, i) => <AppView key={i} modBox={x} />)}
         </Carousel>
       </div>
   );
 }
+
+export default React.memo(App);

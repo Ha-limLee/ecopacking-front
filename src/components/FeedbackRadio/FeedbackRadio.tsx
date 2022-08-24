@@ -1,7 +1,7 @@
 import React from 'react';
 import FeedbackRadioView from "./FeedbackRadio.view";
 
-export default function FeedbackRadio({groupName}: {groupName: string}) {
+function FeedbackRadio({groupName}: {groupName: string}) {
     // group := 상자 혹은 포장재
     // value := 피드백 옵션 (-2, -1, 0, 1, 2)
     // (-2, -1, 0, 1, 2) := (매우 작다, 작다, 보통, 크다, 매우 크다)
@@ -16,3 +16,5 @@ export default function FeedbackRadio({groupName}: {groupName: string}) {
         <FeedbackRadioView groupName={groupName} handleChange={handleChange}/>
     );
 }
+
+export default React.memo(FeedbackRadio);

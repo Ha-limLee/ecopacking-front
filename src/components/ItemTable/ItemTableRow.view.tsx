@@ -1,6 +1,7 @@
 import ModProduct from "types/ModProduct";
+import React from 'react';
 
-export default function ItemTableRowView({tableItem}: {tableItem: ModProduct}) {
+function ItemTableRowView({tableItem}: {tableItem: ModProduct}) {
     return (
         <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
             <td className="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
@@ -22,3 +23,5 @@ export default function ItemTableRowView({tableItem}: {tableItem: ModProduct}) {
         </tr>
     );
 }
+
+export default React.memo(ItemTableRowView);
