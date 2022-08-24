@@ -42,7 +42,7 @@ function convert(packingBoxList: PackingBox[]): ModBox[] {
 }
 
 function App() {
-  const [data, setData] = React.useState<ModBox[]>([{size: '0', texture: '', mpList: []}]);
+  const [data, setData] = React.useState<ModBox[]>([{size: '', texture: '', mpList: []}]);
   const setTotalPageNumber = useSetRecoilState(TotalPageNumberState);
   const setCurrentPageNumber = useSetRecoilState(CurrentPageNumberState);
   const setOrderNumber = useSetRecoilState(OrderNumberState);
